@@ -1,0 +1,20 @@
+download and unzip,
+then check out the pdf, note the writing 'osmium' on the satellite
+run the init_sat program, connect to 'osmium'
+'a' to display config data
+Remaining config data written to: https://docs.google.com/document/d/14eYPluD_pi3824GAFanS29tWdTcKxP_XUxx7e303-3E
+that link gives the string VXNlcm5hbWU6IHdpcmVzaGFyay1yb2NrcwpQYXNzd29yZDogc3RhcnQtc25pZmZpbmchCg==
+base64 decode the string (echo "the_string" | base64 -d) to get:
+
+Username: wireshark-rocks
+Password: start-sniffing!
+
+google wireshark
+download wireshark
+(something like sudo apt install wireshark-qt, just try to run 'wireshark' and terminal will maybe give you hint)
+run wireshark
+capture packets on the network
+run init_sat
+connet to osmium
+check wireshark and see the packets that contained the password holds the flag
+

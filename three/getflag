@@ -1,0 +1,15 @@
+nc readme.ctfcompetition.com 1337
+tar c README.flag
+
+
+
+Process:
+
+ls -la 
+see that README.flag has read privileges
+no cat, or vim, or program seems to work to view the contents of the file
+check the programs available
+ls /bin
+try a bunch of programs out see what they do
+think about what programs work with files
+try tar and get the flag

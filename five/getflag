@@ -1,0 +1,10 @@
+!#bin/bash
+curl https://storage.googleapis.com/gctf-2019-attachments/86863db246859897dda6ba3a4f5801de9109d63c9b6b69810ec4182bf44c9b75 -o download
+unzip download
+sudo mount family.ntfs /mnt
+cd /mnt/Users/Family/Documents
+attr -l credentials.txt
+attr -qg FILE0 credentials.txt >> FILE0
+display FILE0
+sudo umount /mnt
+
