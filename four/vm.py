@@ -1,4 +1,5 @@
 import sys
+import pdb
 
 # Implements a simple stack-based VM
 class VM:
@@ -15,7 +16,7 @@ class VM:
     self.instruction_pointer += 1
 
     fn = VM.OPERATIONS.get(cur_ins, None)
-
+    
     if cur_ins[0] == '🖋':
       return
     if fn is None:
@@ -63,9 +64,13 @@ class VM:
       raise SystemExit()
     marker = '🖋' + marker[1:]
     self.instruction_pointer = self.rom.index(marker) + 1
+    # pdb.set_trace()
+    # print("jumping to: ", self.instruction_pointer)
+    # print("jumping to: ", marker)
 
   def jump_top(self):
-    self.instruction_pointer = self.stack.pop()
+    jump = self.stack.pop()
+    self.instruction_pointer = jump 
 
   def exit(self):
     print('\nDone.')
@@ -142,6 +147,7 @@ class VM:
   def xor(self):
     a = self.stack.pop()
     b = self.stack.pop()
+    print("a: ", a, ", b: ", b)
     self.stack.append(b ^ a)
 
   OPERATIONS = {
